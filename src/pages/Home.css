@@ -1,0 +1,49 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 60px); /* resto del navbar */
+    padding: 2rem 1rem;
+    background-color: var(--light-color, #f5f5f5);
+}
+
+.home-container h1 {
+    color: var(--primary-color, #006400);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.home-container p {
+    color: var(--dark-color, #333);
+    font-size: 1.1rem;
+    text-align: center;
+    max-width: 600px;
+    margin-bottom: 2rem;
+}
+
+.home-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+.home-buttons button {
+    padding: 1rem;
+    background-color: var(--primary-color, #006400);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-md, 8px);
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.home-buttons button:hover {
+    background-color: var(--secondary-color, #004d00);
+    transform: translateY(-2px);
+}

@@ -1,0 +1,42 @@
+.profile-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.profile-container h2 {
+    text-align: center;
+    color: var(--primary-color, #006400);
+    margin-bottom: 1rem;
+}
+
+.profile-info p {
+    margin-bottom: 0.5rem;
+}
+
+.profile-section {
+    margin-top: 1.5rem;
+}
+
+.profile-section h3 {
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 0.25rem;
+}
+
+.profile-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.profile-section li {
+    padding: 0.25rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.profile-section li:last-child {
+    border-bottom: none;
+}
