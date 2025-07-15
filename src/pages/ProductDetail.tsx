@@ -1,86 +1,69 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './ProductDetail.css';
-import { reservationService } from '../services/reservationService';
+import { useParams, useNavigate } from 'react-router-dom';
+import '../styles/productDetail.css';
 
-interface ProductDetailProps {
-    product: {
-        id: string;
-        name: string;
-        imageUrl: string;
-        pricePerDay: number;
-        category: string;
-        available: boolean;
-        state: string;
-        meetingPoint: string;
-        conditions: string;
-    };
-}
-
-const ProductDetail: React.FC<ProductDetailProps> = ({ product }) => {
-    const [fromDate, setFromDate] = useState('');
-    const [toDate, setToDate] = useState('');
+const ProductDetail: React.FC = () => {
+    const { id } = useParams();
     const navigate = useNavigate();
 
-    const handleReserve = async (e: React.FormEvent) => {
-        e.preventDefault();
-        if (!fromDate || !toDate) {
-            alert('Por favor selecciona las fechas de reserva');
-            return;
-        }
+    // Producto simulado
+    const product = {
+        id,
+        title: 'Calculadora Casio FX-991ES',
+        description: 'Calculadora científica ideal para estudiantes de ingeniería.',
+        image: 'https://via.placeholder.com/500x300?text=Calculadora',
+        price: 3000, // precio por día
+        availability: 'Disponible de lunes a viernes, Julio 2025',
+        location: 'Biblioteca Central, UNAL Medellín',
+    };
 
-        try {
-            await reservationService.addReservation({
-                productId: product.id,
-                productName: product.name,
-                renterEmail: 'felipevelez@unal.edu.co',  // Reemplazar por usuario autenticado
-                fromDate,
-                toDate,
-            });
+    const [days, setDays] = useState(1);
+    const [showConfirmation, setShowConfirmation] = useState(false);
 
-            alert('Reserva exitosa, serás redirigido al chat');
-            navigate(`/chat/${product.id}`);  // Nueva ruta para el chat
-        } catch (err) {
-            alert('Ocurrió un error al reservar');
-        }
+    const total = product.price * days;
+
+    const handleReserve = () => {
+        console.log(`Reserva realizada: ${days} días por $${total}`);
+        setShowConfirmation(true);
+        setTimeout(() => {
+            navigate(`/chat/${product.id}`);
+        }, 1500); // Pequeño delay para mostrar confirmación antes de redirigir
     };
 
     return (
-        <div className="product-detail">
-            <h2>{product.name}</h2>
-            <img src={product.imageUrl} alt={product.name} className="product-detail-image" />
+        <main className="product-detail-page">
+            <div className="product-detail-card">
+                <img src={product.image} alt={product.title} className="product-detail-img" />
 
-            <p><strong>Categoría:</strong> {product.category}</p>
-            <p><strong>Estado:</strong> {product.state}</p>
-            <p><strong>Punto de encuentro:</strong> {product.meetingPoint}</p>
-            <p><strong>Condiciones:</strong> {product.conditions}</p>
-            <p><strong>Precio:</strong> ${product.pricePerDay} / día</p>
-            <p className={product.available ? 'available' : 'unavailable'}>
-                {product.available ? 'Disponible' : 'No disponible'}
-            </p>
+                <div className="product-detail-info">
+                    <h1>{product.title}</h1>
+                    <p className="price">$ {product.price.toLocaleString()} / día</p>
+                    <p className="description">{product.description}</p>
+                    <p><strong>Disponibilidad:</strong> {product.availability}</p>
+                    <p><strong>Punto de entrega:</strong> {product.location}</p>
 
-            {product.available && (
-                <form className="reservation-form" onSubmit={handleReserve}>
-                    <label>Desde</label>
-                    <input
-                        type="date"
-                        value={fromDate}
-                        onChange={(e) => setFromDate(e.target.value)}
-                        required
-                    />
+                    <div className="reservation-controls">
+                        <label htmlFor="days">Días de alquiler:</label>
+                        <input
+                            id="days"
+                            type="number"
+                            min={1}
+                            value={days}
+                            onChange={(e) => setDays(Number(e.target.value))}
+                        />
+                        <p><strong>Total:</strong> $ {total.toLocaleString()}</p>
 
-                    <label>Hasta</label>
-                    <input
-                        type="date"
-                        value={toDate}
-                        onChange={(e) => setToDate(e.target.value)}
-                        required
-                    />
+                        <button onClick={handleReserve}>Reservar</button>
 
-                    <button type="submit">Reservar</button>
-                </form>
-            )}
-        </div>
+                        {showConfirmation && (
+                            <p className="confirmation">
+                                ✅ Reserva realizada por {days} día(s). Total: $ {total.toLocaleString()}
+                            </p>
+                        )}
+                    </div>
+                </div>
+            </div>
+        </main>
     );
 };
 

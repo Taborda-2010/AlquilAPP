@@ -1,0 +1,35 @@
+.catalog-page {
+    padding: 20px;
+    min-height: 100vh;
+    box-sizing: border-box;
+    background-color: wheat;
+}
+
+.catalog-title {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: darkolivegreen;
+}
+
+.catalog-filters {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.catalog-filters input,
+.catalog-filters select {
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
