@@ -3,6 +3,8 @@
     min-height: 100vh;
     box-sizing: border-box;
     background-color: wheat;
+    user-select: none;
+    cursor: default;
 }
 
 .catalog-title {
@@ -10,6 +12,8 @@
     font-size: 1.8rem;
     margin-bottom: 20px;
     color: darkolivegreen;
+    user-select: none;
+    cursor: default;
 }
 
 .catalog-filters {
@@ -26,6 +30,7 @@
     font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 4px;
+
 }
 
 .catalog-grid {

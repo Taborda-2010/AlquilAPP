@@ -24,12 +24,16 @@
     margin-bottom: 10px;
     text-align: center;
     color: seagreen;
+    user-select: none;
+    cursor: default;
 }
 
 .login-form label {
     font-weight: bold;
     font-size: 0.95rem;
     color: seagreen;
+    user-select: none;
+    cursor: default;
 }
 
 .login-form input {
@@ -42,7 +46,7 @@
 .login-form button {
     padding: 12px;
     font-size: 1rem;
-    background-color: darkseagreen;
+    background-color: seagreen;
     color: white;
     border: none;
     border-radius: 6px;
@@ -52,7 +56,7 @@
 }
 
 .login-form button:hover {
-    background-color: seagreen;
+    background-color: darkseagreen;
 }
 
 .error {
@@ -64,6 +68,8 @@
     margin-top: 12px;
     text-align: center;
     font-size: 0.95rem;
+    user-select: none;
+    cursor: default;
 }
 
 .login-register-link a {

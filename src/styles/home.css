@@ -9,6 +9,8 @@
     background: wheat;
     color: black;
     text-align: center;
+    user-select: none;
+    cursor: default;
 }
 
 .home-content {
@@ -23,6 +25,8 @@
 .home-description {
     font-size: 1.2rem;
     margin-bottom: 24px;
+    user-select: none;
+    cursor: default;
 }
 
 .home-buttons {
@@ -43,8 +47,8 @@
 }
 
 .home-buttons button:first-child {
-    background-color: darkseagreen;
-    color: darkolivegreen;
+    background-color: darkolivegreen;
+    color: white;
 }
 
 .home-buttons button:first-child:hover {
@@ -52,12 +56,12 @@
 }
 
 .home-buttons .secondary {
-    background-color: white;
-    color: darkolivegreen;
+    background-color: darkolivegreen;
+    color: white;
 }
 
 .home-buttons .secondary:hover {
-    background-color: #f0f0f0;
+    background-color: darkseagreen;
 }
 
 .home-image {

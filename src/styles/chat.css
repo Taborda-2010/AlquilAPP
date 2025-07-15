@@ -12,6 +12,8 @@
     text-align: center;
     margin-bottom: 10px;
     color: darkolivegreen;
+    user-select: none;
+    cursor: default;
 }
 
 .chat-window {
@@ -34,12 +36,16 @@
 .chat-bubble.propietario {
     background-color: #dceeff;
     align-self: flex-start;
+    user-select: none;
+    cursor: default;
 }
 
 .chat-bubble.usuario {
     background-color: #ccffd8;
     align-self: flex-end;
     text-align: right;
+    user-select: none;
+    cursor: default;
 }
 
 .chat-input {
@@ -57,10 +63,14 @@
 
 .chat-input button {
     padding: 10px 16px;
-    background-color: darkseagreen;
+    background-color: darkolivegreen;
     color: white;
     border: none;
     border-radius: 6px;
     font-weight: bold;
     cursor: pointer;
+}
+
+.chat-input button:hover {
+    color: darkseagreen
 }

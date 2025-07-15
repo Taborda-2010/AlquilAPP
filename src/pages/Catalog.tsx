@@ -4,10 +4,10 @@ import ProductCard from '../components/ProductCard';
 import '../styles/catalog.css';
 
 // Imágenes locales
-import calculadora from '../assets/calculadora.png';
+import calculadora from '../assets/Calc.png';
 import bata from '../assets/bata.png';
-import kit from '../assets/kit.png';
-import multi from '../assets/multi.png';
+import bici from '../assets/bici.png';
+
 
 // Tipo de producto
 type Product = {
@@ -21,21 +21,21 @@ type Product = {
 const mockProducts: Product[] = [
     {
         id: 1,
-        title: 'Calculadora Casio FX-991ES',
+        title: 'Calculadora Casio FX-991',
         image: calculadora,
-        price: 3000,
+        price: 12000,
     },
     {
         id: 2,
         title: 'Bata de Laboratorio',
-        image: calculadora,
-        price: 5000,
+        image: bata,
+        price: 4000,
     },
     {
         id: 3,
-        title: 'Kit de dibujo técnico',
-        image: calculadora,
-        price: 2500,
+        title: 'Bicicleta',
+        image: bici,
+        price: 15000,
     },
 
 ];

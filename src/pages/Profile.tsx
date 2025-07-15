@@ -1,8 +1,8 @@
 import React from 'react';
 import '../styles/profile.css';
-import bata from '../assets/calculadora.png';
-import bici from '../assets/calculadora.png';
-import calculadora from '../assets/calculadora.png';
+import bici from '../assets/bici.png';
+import multi from '../assets/MM.png';
+import calculadora from '../assets/Calc.png';
 
 const mockUser = {
     name: 'Felipe Velez',
@@ -13,22 +13,22 @@ const mockUser = {
 const mockPublished = [
     {
         id: 1,
-        title: 'Calculadora Casio FX-991ES',
+        title: 'Calculadora Casio FX-991',
         price: 3000,
         image: calculadora,
     },
     {
         id: 2,
-        title: 'Bata de laboratorio blanca',
+        title: 'Multimetro',
         price: 5000,
-        image: bata,
+        image: multi,
     },
 ];
 
 const mockRentals = [
     {
         id: 3,
-        title: 'Bici',
+        title: 'Bicicleta',
         price: 6000,
         image: bici,
         status: 'En curso',

@@ -5,6 +5,8 @@
     width: 100%;
     box-sizing: border-box;
     margin-top: auto;
+    user-select: none;
+    cursor: default;
 }
 
 .footer-container {
@@ -22,16 +24,21 @@
     gap: 16px;
     flex-wrap: wrap;
     justify-content: center;
+    user-select: none;
+    cursor: default;
 }
 
 .footer-links a {
     color: #a9d6ff;
     text-decoration: none;
     font-size: 0.9rem;
+    user-select: none;
+    cursor: default;
 }
 
 .footer-links a:hover {
     text-decoration: underline;
+
 }
 
 /* Responsive adjustment */

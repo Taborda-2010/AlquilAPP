@@ -7,6 +7,8 @@
     position: sticky;
     top: 0;
     z-index: 1000;
+    user-select: none;
+    cursor: default;
 }
 
 .header-container {
@@ -22,6 +24,8 @@
     font-weight: bold;
     color: white;
     text-decoration: none;
+    user-select: none;
+    cursor: default;
 }
 
 .nav {

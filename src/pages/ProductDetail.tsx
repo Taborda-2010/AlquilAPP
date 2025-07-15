@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import '../styles/productDetail.css';
+import calc from '../assets/Calc.png';
 
 const ProductDetail: React.FC = () => {
     const { id } = useParams();
@@ -9,9 +10,9 @@ const ProductDetail: React.FC = () => {
     // Producto simulado
     const product = {
         id,
-        title: 'Calculadora Casio FX-991ES',
+        title: 'Calculadora Casio FX-991',
         description: 'Calculadora científica ideal para estudiantes de ingeniería.',
-        image: 'https://via.placeholder.com/500x300?text=Calculadora',
+        image: calc,
         price: 3000, // precio por día
         availability: 'Disponible de lunes a viernes, Julio 2025',
         location: 'Biblioteca Central, UNAL Medellín',
